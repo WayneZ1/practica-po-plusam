@@ -25,7 +25,22 @@ struct flytable {
 
 
 void print(flytable p) {
-    cout << p.pp << " " << p.vo.hours << ":" << p.vo.minutes << " " << p.vp.hours << ":" << p.vp.minutes << " " << p.vf.hours << ":" << p.vf.minutes << " " << p.cost << " " << p.raise << endl;
+    cout << p.pp << " " << p.vo.hours << ":" << p.vo.minutes << " " << p.vp.hours << ":" << p.vp.minutes << " " << p.vf.hours << ":" << p.vf.minutes << " " << p.cost << " ";
+    switch (p.raise) {
+    case charter:
+        cout << "charter";
+        break;
+    case transit:
+        cout << "transit";
+        break;
+    case stikovka:
+        cout << "stikovka";
+        break;
+    default:
+        cout << "unknown";
+        break;
+    }
+    cout << endl;
 }
 
 void print(flytable p[], int length) {
